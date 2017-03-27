@@ -57,4 +57,3 @@ C:\Users\hdowning\Documents\Visual Studio 2015\Projects\Demos\LCARSAlexaSkill\LC
 C:\Users\hdowning\Documents\Visual Studio 2015\Projects\Demos\LCARSAlexaSkill\LCARSAlexaSkill\bin\System.Web.Http.WebHost.xml
 C:\Users\hdowning\Documents\Visual Studio 2015\Projects\Demos\LCARSAlexaSkill\LCARSAlexaSkill\obj\Debug\LCARSAlexaSkill.dll
 C:\Users\hdowning\Documents\Visual Studio 2015\Projects\Demos\LCARSAlexaSkill\LCARSAlexaSkill\obj\Debug\LCARSAlexaSkill.pdb
-C:\Users\hdowning\Documents\Visual Studio 2015\Projects\Demos\LCARSAlexaSkill\LCARSAlexaSkill\obj\Debug\LCARSAlexaSkill.csprojResolveAssemblyReference.cache

@@ -13,7 +13,7 @@ namespace LCARSAlexaSkill.Controllers
     {
         private const string ApplicationId = "amzn1.ask.skill.fe105c1a-c4f5-4541-bc30-3bb27ea38999";
 
-        [HttpPost, Route("api")]
+        [HttpPost, Route("api/alexa")]
         public AlexaResponse LCARS(AlexaRequest request)
         {
             if (request.Session.Application.ApplicationId != ApplicationId)

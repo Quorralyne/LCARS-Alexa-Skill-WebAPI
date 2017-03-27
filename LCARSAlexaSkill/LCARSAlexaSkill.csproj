@@ -138,7 +138,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\AlexaValidationRequestHandler.cs" />
+    <Compile Include="Handlers\AlexaRequestValidationHandler.cs" />
     <Compile Include="Handlers\IntentHandlers.cs" />
     <Compile Include="Handlers\RequestHandlers.cs" />
     <Compile Include="Models\AlexaRequest.cs" />
