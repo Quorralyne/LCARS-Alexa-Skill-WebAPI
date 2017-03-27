@@ -1,0 +1,13 @@
+﻿HelloWorldIntent say hello
+HelloWorldIntent say hello world
+HelloWorldIntent hello
+HelloWorldIntent say hi
+HelloWorldIntent say hi world
+HelloWorldIntent hi
+HelloWorldIntent how are you
+
+BrokeHandlerIntent how are you feeling
+
+RedAlertIntent red alert
+
+CommandCodeVerificationIntent Access code {Code} 
