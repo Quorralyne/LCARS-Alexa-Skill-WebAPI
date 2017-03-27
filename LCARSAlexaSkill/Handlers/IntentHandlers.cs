@@ -61,7 +61,7 @@ namespace LCARSAlexaSkill.Handlers
         public static AlexaResponse CommandCodeVerificationIntentHandler(AlexaRequest request)
         {
             //Access code alpha alpha three zero five
-            //ALEXA: Command code AA305 has been verified. Proceed.
+            //ALEXA: Command code alpha alpha 305 has been verified. Proceed.
             //ALEXA Reprompt: Awaiting your orders.
 
             var code = request.Request.Intent.Slots["Code"].value.ToString();
@@ -103,13 +103,13 @@ namespace LCARSAlexaSkill.Handlers
         public static AlexaResponse HelpIntentHandler()
         {
             //Help
-            //ALEXA: Say hello or cancel to exit.
-            //ALEXA Reprompt: What is your command? Say hello or cancel to exit.
+            //ALEXA: Say hello, red alert, your access code or cancel to exit.
+            //ALEXA Reprompt: What is your command? Say hello, red alert, your access code or cancel to exit.
 
-            var response = new AlexaResponse("Say hello or cancel to exit.");
+            var response = new AlexaResponse("Say hello, red alert, your access code or cancel to exit.");
             response.Response.Card.Title = "How to use this skill";
-            response.Response.Card.Content = "Say hello or cancel to exit.\n";
-            response.Response.Reprompt.OutputSpeech.Text = "What is your command? Say hello or cancel to exit.";
+            response.Response.Card.Content = "Say hello, red alert, your access code or cancel to exit.\n";
+            response.Response.Reprompt.OutputSpeech.Text = "What is your command? Say hello, red alert, your access code or cancel to exit.";
             response.Response.ShouldEndSession = false;
             return response;
         }
