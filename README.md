@@ -6,6 +6,7 @@ Features:<br />
 -Basic dynamic Alexa response<br />
 -SSML demo example<br />
 -Custom slot type handling<br />
+-SSML Speechcon example<br />
 -Security handling for certificate<br />
 -Ensures Amazon-only server requests get through<br />
 -Improved handling of help intents and error states<br />
@@ -17,7 +18,10 @@ Originally hosted on Azure Apps Service. Sound files hosted on Amazon S3.
 ALEXA: "Hello, this is Starship U.S.S. Enterprise."
 
 "Alexa, ask LCARS to say hello."<br />
-ALEXA: *acknowledgement beep* "Yes, Counselor?."
+ALEXA: *acknowledgement beep* "Yes, Commander?."
+
+"How are you feeling?"<br />
+ALEXA: "Well, well. Booyah."
 
 "Red alert"<br />
 ALEXA: *distress sound* "Red alert." *distress sound*
