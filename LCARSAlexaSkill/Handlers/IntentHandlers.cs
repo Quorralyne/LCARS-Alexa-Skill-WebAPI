@@ -18,10 +18,10 @@ namespace LCARSAlexaSkill.Handlers
             {
                 var response = new AlexaResponse();
                 response.Response.Card.Title = "Hello";
-                response.Response.Card.Content = "Hello Counselor";
+                response.Response.Card.Content = "Hello Commander";
                 response.Response.OutputSpeech.Type = "SSML";
-                response.Response.OutputSpeech.Ssml = "<speak> <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/computerbeep.mp3\" ></audio> Yes counselor. </speak>";
-                response.Response.Reprompt.OutputSpeech.Text = "Please say Help if you need a list of commands.";
+                response.Response.OutputSpeech.Ssml = "<speak> <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/computerbeep.mp3\" ></audio> Yes commander. </speak>";
+                response.Response.Reprompt.OutputSpeech.Text = "Please say Options if you need a list of commands.";
                 response.Response.ShouldEndSession = false;
 
                 return response;
@@ -33,7 +33,7 @@ namespace LCARSAlexaSkill.Handlers
             }
         }
 
-        public static AlexaResponse RedAlertIntentHandler(AlexaRequest request)
+        public static AlexaResponse RedAlertIntentHandler()
         {
             //Alexa, tell LCARS red alert
             //ALEXA: *distress sound* Red alert *distress sound*
@@ -46,7 +46,7 @@ namespace LCARSAlexaSkill.Handlers
                 response.Response.Card.Content = "Red alert";
                 response.Response.OutputSpeech.Type = "SSML";
                 response.Response.OutputSpeech.Ssml = "<speak> <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/redalert.mp3\" ></audio> Red alert <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/redalert.mp3\" ></audio><audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/redalert.mp3\" ></audio></speak>";
-                response.Response.Reprompt.OutputSpeech.Text = "Awaiting your command.";
+                response.Response.Reprompt.OutputSpeech.Text = "Awaiting your next command.";
                 response.Response.ShouldEndSession = false;
 
                 return response;
@@ -69,13 +69,13 @@ namespace LCARSAlexaSkill.Handlers
             var response = new AlexaResponse("Command code " + code + " has been verified. Proceed.");
             response.Response.Card.Title = "Command code " + code + " has been verified.";
             response.Response.Card.Content = "Proceed.";
-            response.Response.Reprompt.OutputSpeech.Text = "Awaiting your orders.";
+            response.Response.Reprompt.OutputSpeech.Text = "Awaiting your next command.";
             response.Response.ShouldEndSession = false;
 
             return response;
         }
 
-        public static AlexaResponse BrokeIntentHandler(AlexaRequest request)
+        public static AlexaResponse BrokeIntentHandler()
         {
             //Alexa, how are you feeling?
             //ALEXA: I'm broke...did.
@@ -88,7 +88,7 @@ namespace LCARSAlexaSkill.Handlers
                 response.Response.Card.Content = "I'm broke";
                 response.Response.OutputSpeech.Type = "SSML";
                 response.Response.OutputSpeech.Ssml = "<speak> <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/computerbeep.mp3\" ></audio> I'm broke-did. </speak>";
-                response.Response.Reprompt.OutputSpeech.Text = "Please say Help if you need a list of commands.";
+                response.Response.Reprompt.OutputSpeech.Text = "Please say Options if you need a list of commands.";
                 response.Response.ShouldEndSession = false;
 
                 return response;
@@ -98,6 +98,37 @@ namespace LCARSAlexaSkill.Handlers
                 var response = new AlexaResponse("I'm broke..did." + ex.Message);
                 return response;
             }
+        }
+
+        public static AlexaResponse SetCourseIntentHandler(AlexaRequest request)
+        {
+            //Set course for starbase
+            //ALEXA: Course laid in.
+            //ALEXA Reprompt: Awaiting your command to engage.
+
+            var response = new AlexaResponse("Course laid in.");
+            response.Response.Card.Title = "Course Set";
+            response.Response.Card.Content = "Course set for starbase.";
+            response.Response.Reprompt.OutputSpeech.Text = "Awaiting your command to engage.";
+            response.Response.ShouldEndSession = false;
+
+            return response;
+        }
+
+        public static AlexaResponse EngageIntentHandler()
+        {
+            //Engage
+            //ALEXA: *warp sound*
+
+            var response = new AlexaResponse();
+            response.Response.Card.Title = "Engage";
+            response.Response.Card.Content = "Warp speed";
+            response.Response.OutputSpeech.Type = "SSML";
+            response.Response.OutputSpeech.Ssml = "<speak> <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/warp.mp3\" ></audio> </speak>";
+            response.Response.Reprompt.OutputSpeech.Text = "Please say Options if you need a list of commands.";
+            response.Response.ShouldEndSession = false;
+
+            return response;
         }
 
         public static AlexaResponse HelpIntentHandler()
@@ -128,8 +159,8 @@ namespace LCARSAlexaSkill.Handlers
 
         public static AlexaResponse DefaultIntentHandler(AlexaRequest request)
         {
-            var response = new AlexaResponse("I didn't understand what you requested. Say help to hear a list of commands or cancel to exit.");
-            response.Response.Reprompt.OutputSpeech.Text = "Say help to hear a list of commands or cancel to exit.";
+            var response = new AlexaResponse("I didn't understand what you requested. Say options to hear a list of commands or cancel to exit.");
+            response.Response.Reprompt.OutputSpeech.Text = "Say options to hear a list of commands or cancel to exit.";
             response.Response.ShouldEndSession = false;
             return response;
         }

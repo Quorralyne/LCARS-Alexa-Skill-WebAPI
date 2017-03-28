@@ -19,6 +19,12 @@
           "intent": "BrokeHandlerIntent"
       },
       {
+          "intent": "SetCourseIntent"
+      },
+      {
+          "intent": "EngageIntent"
+      },
+      {
           "intent": "AMAZON.HelpIntent"
       },
       {

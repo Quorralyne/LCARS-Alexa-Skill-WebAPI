@@ -11,3 +11,9 @@ BrokeHandlerIntent how are you feeling
 RedAlertIntent red alert
 
 CommandCodeVerificationIntent Access code {Code} 
+
+SetCourseIntent set course for starbase
+
+EngageIntent engage
+
+AMAZON.HelpIntent options
