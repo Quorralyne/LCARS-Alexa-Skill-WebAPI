@@ -35,7 +35,7 @@ ALEXA: "Course laid in for {starbase}. Ready at your command."
 "Engage"<br />
 ALEXA: *warp sound*
 
-"Help"<br />
+"Options"<br />
 ALEXA: "Say hello, red alert, your access code or cancel to exit."
 
 "Cancel"<br />
