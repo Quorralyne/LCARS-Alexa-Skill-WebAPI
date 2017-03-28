@@ -29,6 +29,12 @@ ALEXA: *distress sound* "Red alert." *distress sound*
 "Access code {alpha alpha three zero five}" (You may say any code here)<br />
 ALEXA: "Command code alpha alpha 305 has been verified. Proceed."
 
+"Set course for starbase {STS 112} warp {6}" (words in brackets take in any word)
+ALEXA: "Course laid in for {starbase}. Ready at your command."
+
+"Engage"<br />
+ALEXA: *warp sound*
+
 "Help"<br />
 ALEXA: "Say hello, red alert, your access code or cancel to exit."
 
