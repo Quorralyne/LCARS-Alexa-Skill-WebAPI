@@ -16,12 +16,12 @@ namespace LCARSAlexaSkill.Controllers
         [HttpPost, Route("api/alexa")]
         public AlexaResponse LCARS(AlexaRequest request)
         {
-            if (request.Session.Application.ApplicationId != ApplicationId)
-                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
+            //if (request.Session.Application.ApplicationId != ApplicationId)
+            //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
 
-            var totalSeconds = (DateTime.UtcNow - request.Request.Timestamp).TotalSeconds;
-            if (totalSeconds <= 0 || totalSeconds > 150)
-                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
+            //var totalSeconds = (DateTime.UtcNow - request.Request.Timestamp).TotalSeconds;
+            //if (totalSeconds <= 0 || totalSeconds > 150)
+            //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
 
             AlexaResponse response = null;
 

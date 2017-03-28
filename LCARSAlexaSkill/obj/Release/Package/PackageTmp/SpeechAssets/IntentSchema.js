@@ -19,7 +19,17 @@
           "intent": "BrokeHandlerIntent"
       },
       {
-          "intent": "SetCourseIntent"
+          "intent": "SetCourseIntent",
+          "slots": [
+              {
+                  "name": "Starbase",
+                  "type": "STARBASENUMBER"
+              },
+              {
+                  "name": "Warp",
+                  "type": "WARPNUMBER"
+              }
+          ]
       },
       {
           "intent": "EngageIntent"

@@ -87,7 +87,7 @@ namespace LCARSAlexaSkill.Handlers
                 response.Response.Card.Title = "Broken";
                 response.Response.Card.Content = "I'm broke";
                 response.Response.OutputSpeech.Type = "SSML";
-                response.Response.OutputSpeech.Ssml = "<speak> <audio src=\"https://s3-us-west-2.amazonaws.com/quorralynefiles/computerbeep.mp3\" ></audio> I'm broke-did. </speak>";
+                response.Response.OutputSpeech.Ssml = "<speak> <say-as interpret-as='interjection'>Well well! Booyah.</say-as> </speak>";
                 response.Response.Reprompt.OutputSpeech.Text = "Please say Options if you need a list of commands.";
                 response.Response.ShouldEndSession = false;
 
@@ -106,9 +106,12 @@ namespace LCARSAlexaSkill.Handlers
             //ALEXA: Course laid in.
             //ALEXA Reprompt: Awaiting your command to engage.
 
-            var response = new AlexaResponse("Course laid in.");
-            response.Response.Card.Title = "Course Set";
-            response.Response.Card.Content = "Course set for starbase.";
+            var starbaseNumber = request.Request.Intent.Slots["Starbase"].value.ToString();
+            var warpNumber = request.Request.Intent.Slots["Warp"].value.ToString();
+
+            var response = new AlexaResponse("Course laid in for " + starbaseNumber + ". Ready at your command.");
+            response.Response.Card.Title = "Course Set for " + starbaseNumber;
+            response.Response.Card.Content = "Warp " + warpNumber + ".";
             response.Response.Reprompt.OutputSpeech.Text = "Awaiting your command to engage.";
             response.Response.ShouldEndSession = false;
 

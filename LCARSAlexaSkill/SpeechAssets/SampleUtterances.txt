@@ -12,7 +12,7 @@ RedAlertIntent red alert
 
 CommandCodeVerificationIntent Access code {Code} 
 
-SetCourseIntent set course for starbase
+SetCourseIntent set course for starbase {Starbase} warp {Warp}
 
 EngageIntent engage
 
