@@ -62,7 +62,7 @@ namespace LCARSAlexaSkill.Handlers
 
                     var rsa = (RSACryptoServiceProvider)cert.PublicKey.Key;
 
-                    if (rsa == null || rsa.VerifyHash(data, CryptoConfig.MapNameToOID("SHA1"), signature))
+                    if (rsa == null || !rsa.VerifyHash(data, CryptoConfig.MapNameToOID("SHA1"), signature))
                         throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
                 }
             }
