@@ -47,7 +47,7 @@ namespace LCARSAlexaSkill.Handlers
                     && effectiveDate < DateTime.UtcNow)))
                     throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
 
-                if (!cert.Subject.Contains("CN=echo-api.amazon.com") || !cert.Issuer.Contains("CN=VeriSign Class 3 Secure Server CA"))
+                if (!cert.Subject.Contains("CN=echo-api.amazon.com") || !cert.Issuer.Contains("CN=Symantec Class 3 Secure Server CA"))
                     throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
 
                 var signatureString = request.Headers.GetValues("Signature").First();
@@ -62,7 +62,7 @@ namespace LCARSAlexaSkill.Handlers
 
                     var rsa = (RSACryptoServiceProvider)cert.PublicKey.Key;
 
-                    if (rsa == null || rsa.VerifyHash(data, CryptoConfig.MapNameToOID("SHA1"), signature))
+                    if (rsa == null || !rsa.VerifyHash(data, CryptoConfig.MapNameToOID("SHA1"), signature))
                         throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
                 }
             }

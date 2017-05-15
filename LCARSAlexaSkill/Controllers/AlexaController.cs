@@ -20,7 +20,7 @@ namespace LCARSAlexaSkill.Controllers
             //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
 
             //var totalSeconds = (DateTime.UtcNow - request.Request.Timestamp).TotalSeconds;
-            //if (totalSeconds <= 0 || totalSeconds > 150)
+            //if (totalSeconds < -15 || totalSeconds > 150)
             //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest));
 
             AlexaResponse response = null;
@@ -32,9 +32,11 @@ namespace LCARSAlexaSkill.Controllers
                     case "LaunchRequest":
                         response = RequestHandlers.LaunchRequestHandler(request);
                         break;
+
                     case "IntentRequest":
                         response = RequestHandlers.IntentRequestHandler(request);
                         break;
+
                     case "SessionEndedRequest":
                         response = RequestHandlers.SessionEndedRequestHandler(request);
                         break;
@@ -42,7 +44,6 @@ namespace LCARSAlexaSkill.Controllers
             }
 
             return response;
-
         }
 
         [HttpPost, Route("demo")]
